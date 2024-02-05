@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--clr-primary-900: hsl(270, 9%, 17%);
+	--clr-primary-800: hsl(256, 26%, 20%);
+	--clr-primary-500: hsl(216, 30%, 68%);
+	--clr-neutral-400: hsl(273, 4%, 51%);
+	--clr-neutral-200: hsla(0, 0%, 98%, 0.8);
+	--clr-neutral-100: hsl(0, 0%, 98%);
+	--ff-heading: font-family: 'DM Serif Display', serif;
+	--ff-standard: font-family: 'Karla', sans-serif;
+}
+img,
+svg {
+	display: block;
+	max-width: 100%;
+}
+p,
+span,
+li,
+a {
+	font-family: 'Karla', sans-serif;
+	text-decoration: none;
+}
+ul,
+ol {
+	list-style: none;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+}
+nav ul {
+	display: none;
+}
+
+
+nav ul li a,
+.button {
+	font-size: 0.85rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--clr-neutral-400);
+}
+nav ul li a:hover {
+	color: var(--clr-primary-900);
+}
+.button {
+	font-size: 0.75rem;
+	color: var(--clr-primary-900);
+	border: 2px solid var(--clr-primary-800);
+	background: transparent;
+	padding: 12px 26px;
+	transition: all 0.3s;
+}
+.button-reverse {
+	border: 2px solid var(--clr-neutral-100);
+	color: var(--clr-neutral-100);
+}
+
+.button:hover {
+	background-color: var(--clr-primary-900);
+	color: var(--clr-neutral-100);
+}
+
+button,
+nav img {
+	cursor: pointer;
+}
+
+.wrapper {
+	width: 100%;
+	margin-inline: auto;
+	overflow: hidden;
+}
+
+.columns {
+	display: flex;
+	flex-direction: column-reverse;
+	text-align: center;
+}
+
+.col {
+	flex: 0 0 100%;
+}
+
+.columns .col:first-child {
+	padding-top: 5rem;
+	background-color: var(--clr-primary-800);
+}
+.col h1 {
+	font-family: 'DM Serif Display', serif;
+	font-size: 2.95rem;
+	font-weight: 400;
+	line-height: 3rem;
+	color: var(--clr-neutral-100);
+}
+
+.col p {
+	margin: 1rem 0;
+	/* CHANGE PADDING ON DESKTOP */
+	font-size: 0.95rem;
+	line-height: 1.5rem;
+	color: var(--clr-neutral-200);
+}
+.col picture img {
+	width: 100%;
+}
+
+@media (min-width: 48rem) {
+	.wrapper {
+		width: min(1200px, 100% - (1.5rem) * 2);
+	}
+
+	.background {
+		position: absolute;
+		background-color: var(--clr-primary-800);
+		width: 100%;
+		height: 70%;
+		left: 0;
+	}
+	.columns {
+		border: 2px solid green;
+		padding: 6rem 0;
+		position: relative;
+		flex-direction: row;
+	}
+	.columns .col:first-child {
+		background-color: transparent;
+	}
+	.col {
+		flex: 0 0 50%;
+	}
+
+	header {
+		padding: 1.5rem 0;
+	}
+
+	nav ul {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	nav img {
+		display: none;
+	}
+}
