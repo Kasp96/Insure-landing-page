@@ -14,6 +14,7 @@
 	--clr-neutral-200: hsla(0, 0%, 98%, 0.8);
 	--clr-neutral-100: hsl(0, 0%, 98%);
 	--ff-heading: 'DM Serif Display', serif;
+	--fw-heading: 400;
 	--ff-standard: 'Karla', sans-serif;
 }
 
@@ -126,9 +127,9 @@ nav img {
 	z-index: 1000;
 }
 .col h1 {
-	font-family: 'DM Serif Display', serif;
 	font-size: 2.85rem;
-	font-weight: 400;
+	font-family: 'DM Serif Display', serif;
+	font-weight: var(--fw-heading);
 	line-height: 3rem;
 	color: var(--clr-neutral-100);
 }
@@ -149,12 +150,15 @@ nav img {
 
 .flex-group {
 	padding-top: 13rem;
+	padding-bottom: 10rem;
 	text-align: center;
 }
 .flex-group h2 {
-	font-size: 3.25rem;
+	font-size: 3.05rem;
 	margin-bottom: 5rem;
 	position: relative;
+	font-family: var(--ff-heading);
+	font-weight: var(--fw-heading);
 }
 .flex-group h2::before {
 	position: absolute;
@@ -188,6 +192,41 @@ nav img {
 }
 .flex-box img {
 	margin-bottom: 2rem;
+}
+
+/* ZAPYTAC BADA CZY MOGE UZYWAC CAMELCASA DO NAZYWANIA KLAS */
+.how-we-work {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	gap: 2.5rem;
+	background-color: var(--clr-primary-800);
+	position: relative;
+	padding: 4.5rem 0;
+	overflow: hidden;
+}
+.how-we-work-background {
+	background-image: url('/images/bg-pattern-how-we-work-mobile.svg');
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 170px;
+	height: 350px;
+	z-index: 0;
+}
+
+.how-we-work-col {
+	z-index: 1;
+}
+.how-we-work h2,
+.how-we-work span {
+	font-size: 2.45rem;
+	font-family: var(--ff-heading);
+	font-weight: var(--fw-heading);
+	line-height: 2.5rem;
+	color: var(--clr-neutral-100);
 }
 
 @media (min-width: 48rem) {
@@ -297,5 +336,41 @@ nav img {
 	}
 	.flex-box {
 		align-items: flex-start;
+	}
+	.how-we-work {
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 2.5rem;
+		padding: 4rem 5rem;
+	}
+
+	.how-we-work h2,
+	.how-we-work span {
+		font-size: 3.25rem;
+		font-weight: 400;
+		line-height: 3.5rem;
+		font-family: var(--ff-heading);
+		color: var(--clr-neutral-100);
+		text-align: left;
+	}
+	.block {
+		display: block;
+	}
+	.how-we-work-background {
+		background-image: url('/images/bg-pattern-how-we-work-desktop.svg');
+		width: 420px;
+		height: 450px;
+		min-height: 100%;
+		/* border: 2px solid gold; */
+	}
+	.how-we-work button {
+		margin-left: auto;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 880px) {
+	.how-we-work h2,
+	.how-we-work span {
+		font-size: 2.55rem;
 	}
 }
