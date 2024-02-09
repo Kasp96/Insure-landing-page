@@ -11,6 +11,7 @@
 	--clr-primary-800: hsl(256, 26%, 20%);
 	--clr-primary-500: hsl(216, 30%, 68%);
 	--clr-neutral-400: hsl(273, 4%, 51%);
+	--clr-neutral-300: hsl(0, 0%, 92%);
 	--clr-neutral-200: hsla(0, 0%, 98%, 0.8);
 	--clr-neutral-100: hsl(0, 0%, 98%);
 	--ff-heading: 'DM Serif Display', serif;
@@ -229,6 +230,97 @@ nav img {
 	color: var(--clr-neutral-100);
 }
 
+.footer-background {
+	position: absolute;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	background-color: var(--clr-neutral-200);
+}
+.footer-background-element {
+	position: absolute;
+	background-image: url('/images/bg-pattern-footer-mobile.svg');
+	top: 0;
+	left: 0;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 300px;
+}
+footer {
+	margin-top: 10rem;
+	position: relative;
+	overflow: hidden;
+	background-color: var(--clr-neutral-200);
+}
+.footer-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 6rem 0;
+}
+
+.footer-top {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	position: relative;
+	padding-bottom: 2rem;
+	/* border: 2px solid purple; */
+}
+.footer-top::after {
+	position: absolute;
+	content: '';
+	bottom: 0;
+	width: 85%;
+	height: 1px;
+	background-color: var(--clr-neutral-400);
+}
+
+.footer-socials {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.footer-socials svg {
+	transition: all 0.3s;
+	cursor: pointer;
+	fill: #837d88;
+}
+/* ROZKMINIC CZY MOGE SKROCIC ZAPIS SVG */
+
+.footer-socials svg:hover {
+	fill: var(--clr-primary-900);
+}
+
+.footer-bottom {
+	text-align: center;
+}
+.footer-bottom h4 {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	font-size: 0.85rem;
+	font-family: var(--ff-standard);
+	text-transform: uppercase;
+	color: var(--clr-neutral-400);
+}
+.footer-col ul {
+	display: flex;
+	flex-direction: column;
+	font-size: 0.85rem;
+	font-weight: 700;
+	color: var(--clr-primary-900);
+	text-transform: uppercase;
+	gap: 1rem;
+}
+.footer-col ul li {
+	letter-spacing: 1px;
+}
+
 @media (min-width: 48rem) {
 	header {
 		padding: 1.5rem 0;
@@ -361,10 +453,70 @@ nav img {
 		width: 420px;
 		height: 450px;
 		min-height: 100%;
-		/* border: 2px solid gold; */
 	}
 	.how-we-work button {
 		margin-left: auto;
+	}
+
+	.footer-background-element {
+		background-image: url('/images/bg-pattern-footer-desktop.svg');
+	}
+
+	.footer-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 6rem 0;
+	}
+
+	.footer-top {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		position: relative;
+	}
+	.footer-top::after {
+		width: 100%;
+	}
+
+	.footer-bottom {
+		display: flex;
+		text-align: center;
+		justify-content: space-between;
+		align-items: start;
+		width: 100%;
+		margin-right: auto;
+	}
+
+	.footer-bottom h4 {
+		margin-top: 3.5rem;
+		margin-bottom: 2rem;
+		font-size: 0.85rem;
+		font-family: var(--ff-standard);
+		text-transform: uppercase;
+		text-align: left;
+		color: var(--clr-neutral-400);
+	}
+	.footer-col {
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 25%;
+	}
+
+	.footer-col ul {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		font-size: 0.85rem;
+		font-weight: 700;
+		color: var(--clr-primary-900);
+		text-transform: uppercase;
+		gap: 1rem;
+	}
+	.footer-col ul li {
+		letter-spacing: 1px;
 	}
 }
 
