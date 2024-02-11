@@ -42,37 +42,87 @@ header {
 	align-items: center;
 	padding: 1.5rem;
 }
+
 nav ul {
-	display: none;
+	padding-top: 3rem;
+	position: fixed;
+	top: 5rem;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	width: 100%;
+	min-height: 100%;
+	z-index: 1000;
+	background-color: var(--clr-primary-900);
+	transform: translateX(800px);
+	transition: transform 0.3s ease-in-out;
 }
 
+.show {
+	transform: translateX(0px);
+	background-image: url('/images/bg-pattern-mobile-nav.svg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position-y: 90%;
+}
+.overflow {
+	overflow: hidden;
+}
+
+nav ul li a {
+	color: var(--clr-neutral-100);
+}
+.nav-btn {
+	display: block;
+}
+.nav-close {
+	display: none;
+}
+.active {
+	display: block;
+}
+.hide {
+	display: none;
+}
+/* TU JEST BUTTON */
 nav ul li a,
 .button {
-	font-size: 0.85rem;
+	font-size: 1.25rem;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	color: var(--clr-neutral-400);
 }
 nav ul li a:hover {
 	color: var(--clr-primary-900);
 }
-.button {
-	font-size: 0.75rem;
-	color: var(--clr-primary-900);
-	border: 2px solid var(--clr-primary-800);
-	background: transparent;
-	padding: 12px 26px;
-	transition: all 0.3s;
+nav ul button {
+	width: 85%;
 }
-.button-reverse {
+
+.button {
+	font-size: 0.85rem;
 	border: 2px solid var(--clr-neutral-100);
 	color: var(--clr-neutral-100);
+	background: transparent;
+	padding: 15px 26px;
+	transition: all 0.3s;
 }
 
 .button:hover {
 	background-color: var(--clr-primary-900);
 	color: var(--clr-neutral-100);
+}
+
+.button-reverse {
+	border: 2px solid var(--clr-neutral-100);
+	color: var(--clr-neutral-100);
+	transition: all 0.3s;
+}
+.button-reverse:hover {
+	background-color: var(--clr-neutral-100);
+	color: var(--clr-primary-900);
 }
 
 button,
@@ -117,16 +167,14 @@ nav img {
 	bottom: -10rem;
 	height: 350px;
 }
-/* section {
-	z-index: 10000;
-} */
 .columns .col:first-child {
 	position: relative;
 	padding-top: 5rem;
 	padding-bottom: 5rem;
 	background-color: var(--clr-primary-800);
-	z-index: 1000;
+	z-index: 0;
 }
+
 .col h1 {
 	font-size: 2.85rem;
 	font-family: 'DM Serif Display', serif;
@@ -195,7 +243,6 @@ nav img {
 	margin-bottom: 2rem;
 }
 
-/* ZAPYTAC BADA CZY MOGE UZYWAC CAMELCASA DO NAZYWANIA KLAS */
 .how-we-work {
 	display: flex;
 	flex-direction: column;
@@ -260,7 +307,6 @@ footer {
 	align-items: center;
 	padding: 6rem 0;
 }
-
 .footer-top {
 	display: flex;
 	flex-direction: column;
@@ -268,7 +314,6 @@ footer {
 	width: 100%;
 	position: relative;
 	padding-bottom: 2rem;
-	/* border: 2px solid purple; */
 }
 .footer-top::after {
 	position: absolute;
@@ -278,7 +323,9 @@ footer {
 	height: 1px;
 	background-color: var(--clr-neutral-400);
 }
-
+.footer-top img {
+	margin-bottom: 2rem;
+}
 .footer-socials {
 	display: flex;
 	justify-content: center;
@@ -286,12 +333,36 @@ footer {
 	gap: 1rem;
 }
 
+.icon {
+	position: relative;
+}
+.tooltip {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	transform: translate(-110px, -82px);
+	min-width: 135px;
+	padding: 10px 20px;
+	background-color: var(--clr-neutral-400);
+	color: var(--clr-neutral-100);
+	border-radius: 6px;
+}
+.tooltip::after {
+	position: absolute;
+	content: '';
+	bottom: -0.35rem;
+	right: 0.75rem;
+	width: 14px;
+	height: 14px;
+	rotate: 45deg;
+	background-color: var(--clr-neutral-400);
+}
+
 .footer-socials svg {
 	transition: all 0.3s;
 	cursor: pointer;
 	fill: #837d88;
 }
-/* ROZKMINIC CZY MOGE SKROCIC ZAPIS SVG */
 
 .footer-socials svg:hover {
 	fill: var(--clr-primary-900);
@@ -320,20 +391,71 @@ footer {
 .footer-col ul li {
 	letter-spacing: 1px;
 }
+.footer-col ul li:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
 
 @media (min-width: 48rem) {
+	.btn {
+		display: none;
+	}
 	header {
 		padding: 1.5rem 0;
+		transition: background 0.3s;
+	}
+
+	header.sticking {
+		position: sticky;
+		top: 0;
+		background-color: rgba(255, 255, 255, 0.1);
+		z-index: 10000;
 	}
 
 	nav ul {
+		position: static;
 		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: auto;
+		padding-top: 0;
+		transform: translateX(0px);
 		align-items: center;
 		gap: 1.5rem;
+		background-color: transparent;
+	}
+	nav ul li a,
+	.button {
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: var(--clr-neutral-400);
 	}
 
 	nav img {
 		display: none;
+	}
+	.button {
+		font-size: 0.75rem;
+		color: var(--clr-primary-900);
+		border: 2px solid var(--clr-primary-800);
+		background: transparent;
+		padding: 12px 26px;
+		transition: all 0.3s;
+		width: auto;
+	}
+	.button:hover {
+		background-color: var(--clr-primary-900);
+		color: var(--clr-neutral-100);
+	}
+	.button-reverse {
+		border: 1px solid var(--clr-neutral-100);
+		color: var(--clr-neutral-100);
+	}
+	.button-reverse:hover {
+		background-color: var(--clr-neutral-100);
+		color: var(--clr-primary-900);
 	}
 	.wrapper {
 		width: min(1200px, 100% - (1.5rem) * 2);
@@ -383,6 +505,7 @@ footer {
 	}
 	.columns .col:first-child {
 		background-color: transparent;
+		z-index: 1000;
 	}
 
 	.columns .col:first-child::before {
@@ -460,6 +583,7 @@ footer {
 
 	.footer-background-element {
 		background-image: url('/images/bg-pattern-footer-desktop.svg');
+		z-index: 0;
 	}
 
 	.footer-container {
@@ -468,6 +592,7 @@ footer {
 		justify-content: center;
 		align-items: center;
 		padding: 6rem 0;
+		z-index: 0;
 	}
 
 	.footer-top {
@@ -481,6 +606,10 @@ footer {
 		width: 100%;
 	}
 
+	.footer-top img {
+		margin-bottom: 0;
+	}
+
 	.footer-bottom {
 		display: flex;
 		text-align: center;
@@ -488,6 +617,7 @@ footer {
 		align-items: start;
 		width: 100%;
 		margin-right: auto;
+		z-index: 2;
 	}
 
 	.footer-bottom h4 {
