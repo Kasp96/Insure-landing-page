@@ -62,7 +62,7 @@ nav ul {
 
 .show {
 	transform: translateX(0px);
-	background-image: url('/images/bg-pattern-mobile-nav.svg');
+	background-image: url('./images/bg-pattern-mobile-nav.svg');
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position-y: 90%;
@@ -155,14 +155,14 @@ nav img {
 	z-index: -1;
 }
 .bg-mobile-1 {
-	background-image: url('/images/bg-pattern-intro-left-mobile.svg');
+	background-image: url('./images/bg-pattern-intro-left-mobile.svg');
 	background-position: top left;
 	top: 0;
 	left: 0;
 	height: 200px;
 }
 .bg-mobile-2 {
-	background-image: url('/images/bg-pattern-intro-right-mobile.svg');
+	background-image: url('./images/bg-pattern-intro-right-mobile.svg');
 	background-position: bottom right;
 	bottom: -10rem;
 	height: 350px;
@@ -255,7 +255,7 @@ nav img {
 	overflow: hidden;
 }
 .how-we-work-background {
-	background-image: url('/images/bg-pattern-how-we-work-mobile.svg');
+	background-image: url('./images/bg-pattern-how-we-work-mobile.svg');
 	background-repeat: no-repeat;
 	position: absolute;
 	top: 0;
@@ -287,7 +287,7 @@ nav img {
 }
 .footer-background-element {
 	position: absolute;
-	background-image: url('/images/bg-pattern-footer-mobile.svg');
+	background-image: url('./images/bg-pattern-footer-mobile.svg');
 	top: 0;
 	left: 0;
 	background-repeat: no-repeat;
@@ -480,7 +480,7 @@ footer {
 	}
 
 	.bg-desktop-1 {
-		background-image: url('/images/bg-pattern-intro-left-desktop.svg');
+		background-image: url('./images/bg-pattern-intro-left-desktop.svg');
 		background-position: bottom left;
 		bottom: -8rem;
 		left: 0;
@@ -489,7 +489,7 @@ footer {
 	}
 
 	.bg-desktop-2 {
-		background-image: url('/images/bg-pattern-intro-right-desktop.svg');
+		background-image: url('./images/bg-pattern-intro-right-desktop.svg');
 		background-position: top right;
 		top: -5rem;
 		right: 0;
@@ -572,7 +572,7 @@ footer {
 		display: block;
 	}
 	.how-we-work-background {
-		background-image: url('/images/bg-pattern-how-we-work-desktop.svg');
+		background-image: url('./images/bg-pattern-how-we-work-desktop.svg');
 		width: 420px;
 		height: 450px;
 		min-height: 100%;
@@ -582,7 +582,7 @@ footer {
 	}
 
 	.footer-background-element {
-		background-image: url('/images/bg-pattern-footer-desktop.svg');
+		background-image: url('./images/bg-pattern-footer-desktop.svg');
 		z-index: 0;
 	}
 
